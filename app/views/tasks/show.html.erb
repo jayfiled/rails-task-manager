@@ -1,0 +1,15 @@
+<h2 class="display-1"><%= @task.title %></h1>
+  <hr>
+<%= link_to "Edit", edit_task_path(@task) %>
+<hr>
+
+<p class="lead"><%= @task.details  %></p>
+
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id=<%= "default-check#{@task.id}"  %> <%= @task.completed ? "checked" : ""%>>
+  <label class="form-check-label" for=<%= "default-check#{@task.id}"%>><%= @task.title %></label>
+</div>
+<hr>
+
+<%= link_to "Go back", root_path %>
+

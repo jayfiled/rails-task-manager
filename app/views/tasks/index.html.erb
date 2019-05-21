@@ -1,0 +1,11 @@
+<h1 class="display-1">My Tasks</h1>
+
+<% @tasks.each do |task| %>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id=<%= "default-check#{task.id}"  %> <%= task.completed ? "checked" : ""%>>
+  <label class="form-check-label" for=<%= "default-check#{task.id}"%>><%= link_to task.title, show_path(task["id"]) %></label><%= link_to "Delete", destroy_task_path(task[:id]) %>
+</div>
+<% end %>
+<hr>
+<p><%= link_to "Add a new task", new_task_path %></p>
+
